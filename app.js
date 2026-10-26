@@ -130,6 +130,3 @@ app.get('/anggota',(req,res)=>{
 app.listen(PORT,() => {
     console.log(`Aplikasi berjalan di http://localhost:${PORT}`);
 });
-
-
-// token : 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

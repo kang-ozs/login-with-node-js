@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Selamat Datang Kembali!</h1>
+        <div class="info-box">
+            <!-- Menggunakan EJS untuk langsung menampilkan data session -->
+            <p>Halo, <strong><%= username %></strong></p>
+            <p>Hak Akses Anda: <span class="badge <%= role %>"><%= role.toUpperCase() %></span></p>
+            <p><a href="/anggota">Anggota</a></p>
+        </div>
+        <a href="/logout" class="btn-logout">Keluar Aplikasi</a>
+    </div>
+</body>
+</html>

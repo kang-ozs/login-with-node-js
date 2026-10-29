@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     if (req.session.loggedin) {
         res.redirect('/dashboard');
     } else {
-        res.render('index', { error: null });
+        res.render('index', { error: null,layout: false });
     }
 });
 
@@ -28,11 +28,11 @@ router.post('/login',(req,res)=>{
                     req.session.role = results[0].role;
                     res.redirect('/dashboard');
                 } else {
-                    res.render('index',{error:'Username dan atau password salah'});
+                    res.render('index',{error:'Username dan atau password salah',layout: false});
                 }
             });
     } else {
-         res.render('index',{error:'masukan username dan password'});
+         res.render('index',{error:'masukan username dan password',layout: false});
     }
 
 });

@@ -1,0 +1,22 @@
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted"> 
+        <div class="welcome-message">
+            <!-- Menggunakan pengecekan typeof agar jika variabel kosong tidak membuat aplikasi crash -->
+            <div class="welcome-message-kiri">
+                Selamat Datang, <%= typeof username !== 'undefined' ? username : 'Tamu' %>
+            </div>
+            <div class="welcome-message-kanan">
+                Anda login sebagai <strong><%= typeof role !== 'undefined' ? role : '-' %></strong>
+            </div>
+        </div>
+
+    </span>
+  </div>
+</footer>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

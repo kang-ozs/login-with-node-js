@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aplikasi Tabungan dengan Node JS">
+    <meta name="author" content="Oya Suryana">
+    <meta name="theme-color" content="#7952b3">
+    
+    <!-- Membuat judul halaman dinamis -->
+    <title><%= typeof title !== 'undefined' ? title : 'Aplikasi Tabungan' %></title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        main > .container {
+            padding: 60px 15px 0;
+        }
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        .welcome-message{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between ;
+        }
+    </style>
+  </head>
+<body class="d-flex flex-column h-100">
+    
+    <!-- Bagian Header Tetap (Berisi Navbar atas) -->
+    <%- include('./partials/header') %>
+
+    <!-- Area Konten Utama yang Dinamis -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <!-- Tempat potongan file ejs lain (seperti dashboard, nasabah, dll) disisipkan -->
+            <%- body %>
+        </div>
+    </main>
+
+    <!-- Bagian Footer Tetap -->
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

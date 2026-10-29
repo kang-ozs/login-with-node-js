@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const expressLayouts = require('express-ejs-layouts');
 const parser = require('body-parser');
 const path = require('path');
 
@@ -19,10 +20,14 @@ app.use(express.static(path.join(__dirname,'public')));
 // 3. Atur view engine ke ejs
 app.set('view engine', 'ejs');
 
-// Mengatur Express bahwa folder template bernama 'views'
+// 4. Gunakan Express EJS Layouts
+app.use(expressLayouts);
+app.set('layout','layout')
+
+// 5. Mengatur Express bahwa folder template bernama 'views'
 app.set('views', path.join(__dirname, 'views'));
 
-// 4. mengatur session
+// 7. mengatur session
 app.use(session({
     secret :'rahasia',
     resave: false,
@@ -32,16 +37,19 @@ app.use(session({
     } // session aktif selama 30 menit
 }));
 
-// 5. PEMANGGILAN ROUTE APLIKASI ---
+// 6. PEMANGGILAN ROUTE APLIKASI ---
 const authRouter = require('./routes/auth');
-const anggotaRouter = require('./routes/anggota');
+const nasabahRouter = require('./routes/nasabah');
+
+
 
 app.use('/', authRouter);            // Menangani /, /login, /logout, dan /dashboard
-app.use('/anggota', anggotaRouter);  // Menangani /anggota
+app.use('/nasabah', nasabahRouter);  // Menangani /nasabah
 
 
 
-// 6. jalankan apkikasi
+
+// 8. jalankan apkikasi
 app.listen(PORT,() => {
     console.log(`Aplikasi berjalan di http://localhost:${PORT}`);
 });

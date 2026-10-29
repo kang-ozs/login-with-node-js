@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div class="dashboard-container">
-        <h1>Selamat Datang Kembali!</h1>
-        <div class="info-box">
-            <!-- Menggunakan EJS untuk langsung menampilkan data session -->
-            <p>Halo, <strong><%= username %></strong></p>
-            <p>Hak Akses Anda: <span class="badge <%= role %>"><%= role.toUpperCase() %></span></p>
-            <p><a href="/tampil-anggota">Anggota</a></p>
+<!-- views/dashboard.ejs -->
+<div class="row">
+    <div class="col-md-12">
+       
+        <div class="alert alert-success">
+            Berhasil masuk ke sistem aplikasi tabungan.
         </div>
-        <a href="/logout" class="btn-logout">Keluar Aplikasi</a>
     </div>
-</body>
-</html>
+</div>
